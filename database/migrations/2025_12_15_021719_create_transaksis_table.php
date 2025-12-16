@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->Integer('number');
+            $table->String('pengirim');
+            $table->String('penerima');
+            $table->Integer('number_akun');
             $table->double('amount');
             $table->timestamps();
         });
